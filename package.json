@@ -1,0 +1,38 @@
+{
+  "name": "zenyatta",
+  "version": "0.0.1",
+  "description": "zenyatta",
+  "license": "MIT",
+  "bin": {
+    "zenyatta": "./bin/zenyatta"
+  },
+  "scripts": {
+    "build": "rm -rf lib && babel src --out-dir lib",
+    "dev": "npm run build -- -w"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "commander": "^2.15.1",
+    "ejs": "^2.5.8",
+    "fs-extra": "^5.0.0",
+    "js-beautify": "^1.7.5",
+    "js-yaml": "^3.11.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.1"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "plugins": [
+      "add-module-exports"
+    ]
+  },
+  "files": [
+    "bin",
+    "lib"
+  ]
+}

@@ -1,0 +1,15 @@
+<div>
+  <p><%= copyright %></p>
+  <ul>
+    <% links.forEach(function(link){ %>
+      <li>
+        <a href="<%= link.link %>">
+          <%= link.title %>
+        </a>
+      </li>
+      <% }); %>
+  </ul>
+  <p><%= contact.address %></p>
+  <p><%= contact.email %></p>
+  <p><%= contact.phone %></p>
+</div>
