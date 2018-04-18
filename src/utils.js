@@ -15,8 +15,7 @@ export function renderFile(name, data, callback) {
     if (!err) {
       callback(str);
     } else {
-      console.log(err);
-      process.exit(1);
+      throw err;
     }
   });
 }
