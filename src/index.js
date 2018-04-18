@@ -2,6 +2,7 @@ import yaml from 'js-yaml';
 import {
   renderFile,
   writeHTMLFile,
+  writeCSSFile,
   readFile,
 } from './utils';
 
@@ -11,9 +12,13 @@ function zenyatta(program) {
   if (yamlFile) {
     try {
       const config = yaml.safeLoad(readFile(yamlFile));
+
       renderFile('index', config, source => {
-        console.log(source);
-        writeHTMLFile('hehe.html', source);
+        writeHTMLFile('index.html', source);
+      });
+
+      renderFile('zatlas.css', config, source => {
+        writeCSSFile('zatlas.css', source);
       });
     } catch (e) {
       console.log(e)

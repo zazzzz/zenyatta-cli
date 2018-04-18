@@ -1,0 +1,32 @@
+<div class="container">
+  <ul class="intro-list">
+    <% features.forEach(function(ft, idx){ %>
+      <li>
+        <div class="intro">
+          <h3 class="number"><%= idx + 1 %></h3>
+          <p class="intro-title">
+            <%= ft.title %>
+          </p>
+          <p class="intro-desc">
+            <%= ft.description %>
+          </p>
+        </div>
+        <div class="intro-img">
+          <img src="<%= ft.image %>" alt="">
+        </div>
+      </li>
+    <% }); %>
+  </ul>
+  <div class="module">
+    <h3 class="module-title"><%= example.title %></h3>
+    <p class="module-desc"><%= example.subtitle %></p>
+    <ul class="case-list">
+      <% example.examples.forEach(function (ep) { %>
+        <li class="case">
+          <img src="<%= ep.image %>" alt="">
+          <p class="case-name"><%= ep.title %></p>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</div>

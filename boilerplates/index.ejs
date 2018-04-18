@@ -1,26 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><%= title %></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="renderer" content="webkit" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="./<%= title %>.css">
 </head>
 <body>
-  <% if (navigators.length) { %>
-    <% include navigator %>
-  <% } %>
-
-  <% include main %>
-
-  <% if (features.length) { %>
-    <% include feature %>
-  <% } %>
-
-  <% if (example.title) { %>
-    <% include example %>
-  <% } %>
-
-  <% include footer %>
+  <% include head %>
+  <% include body %>
+  <% include foot %>
 </body>
 </html>

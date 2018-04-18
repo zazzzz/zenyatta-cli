@@ -2,7 +2,7 @@ import ejs from 'ejs';
 import { join } from 'path';
 import { readFileSync, existsSync } from 'fs';
 import { outputFileSync, removeSync } from 'fs-extra';
-import { html } from 'js-beautify';
+import { html, css } from 'js-beautify';
 
 export function getTemplate(name) {
   const filePath = join(__dirname, `../boilerplates/${name}.ejs`);
@@ -37,6 +37,11 @@ export function writeHTMLFile(filePath, source) {
   const result = html(source, {
     preserve_newlines: false
   });
+  outputFileSync(filePath, result, 'utf-8');
+}
+
+export function writeCSSFile(filePath, source) {
+  const result = css(source, {});
   outputFileSync(filePath, result, 'utf-8');
 }
 
