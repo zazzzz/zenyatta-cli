@@ -1,0 +1,68 @@
+title: Zatlas
+subtitle: 极致可视化产品开发体验
+description: 提供一站式数据可视化服务
+subdescription: 支持数据预览-数据绑定-可视化设计-数据产品开发全链路流程
+logo: images/Logo_default.png
+cover: images/desc.png
+
+navigators:
+  -
+    title: 首页
+    link: v.anlink.com
+  -
+    title: 下载
+    link: v.anlink.com
+  -
+    title: 文档
+    link: v.anlink.com
+  -
+    title: 合作
+    link: v.anlink.com
+
+features:
+  -
+    title: 一站式的开发工具
+    description: 独特的角色定制化模式，旨在打通设计师、前端工程师、后台开发的工作全链路，大大降低开发成本
+    image: images/01.png
+  -
+    title: 丰富的可视化
+    description: 多达十几种基础图表，更有关系网络、专题地图等专业级图表，满足用户多方位的数据类型展示，快速调节设置，一键生成代码
+    image: images/02.png
+  -
+    title: 专业的案例模版
+    description: 不管是产品大屏还是可视化探索，都能在这里找到模版，快速上手搭建个性化的可视化系统
+    image: images/03.png
+  -
+    title: 多种数据源接入
+    description: 不仅可以方便地连接多种数据库，更内置了样例数据供设计师调节、导出样式配置，缩短数据产品开发时间
+    image: images/04.png
+
+example:
+  title: 模版案例精选
+  subtitle: 专业的案例模版，助您快速搭建可视化场景
+  examples:
+  -
+    title: 风控场景
+    image: images/case1.png
+  -
+    title: 周报场景
+    image: images/case2.png
+  -
+    title: 金融场景
+    image: images/case3.png
+
+copyright: 2017 Anlink 众安信息技术服务有限公司
+links:
+  -
+    title: 安链云
+    link: v.anlink.com
+  -
+    title: 众安科技
+    link: v.anlink.com
+  -
+    title: 众安保险
+    link: v.anlink.com
+contact:
+  address: 上海市黄浦区北京东路130号中实大楼4楼
+  email: contacts@zhongan.io
+  phone: 021-60276816
