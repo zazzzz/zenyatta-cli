@@ -1,27 +1,25 @@
+import { basename } from 'path';
 import yaml from 'js-yaml';
-import {
-  renderFile,
-  writeHTMLFile,
-  writeCSSFile,
-  readFile,
-} from './utils';
+import { readFile, renderFile, writeHTMLFile, writeCSSFile } from './utils';
 
 function zenyatta(program) {
   const yamlFile = program.args[0];
+  const style = program.style;
+  const name = basename(yamlFile, '.yml');
 
-  if (yamlFile) {
+  if (yamlFile && name) {
     try {
       const config = yaml.safeLoad(readFile(yamlFile));
 
       renderFile('index', config, source => {
-        writeHTMLFile('index.html', source);
+        writeHTMLFile(`${name}.html`, source);
       });
 
-      renderFile('zatlas.css', config, source => {
-        writeCSSFile('zatlas.css', source);
+      renderFile(`${style}.css`, config, source => {
+        writeCSSFile(`${name}.css`, source);
       });
-    } catch (e) {
-      console.log(e)
+    } catch (err) {
+      console.log(err);
       process.exit(1);
     }
   }

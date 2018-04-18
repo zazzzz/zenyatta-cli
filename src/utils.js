@@ -1,26 +1,22 @@
 import ejs from 'ejs';
-import { join } from 'path';
+import { resolve } from 'path';
 import { readFileSync, existsSync } from 'fs';
 import { outputFileSync, removeSync } from 'fs-extra';
 import { html, css } from 'js-beautify';
 
 export function getTemplate(name) {
-  const filePath = join(__dirname, `../boilerplates/${name}.ejs`);
-  const source = readFileSync(filePath, 'utf-8');
-  return source;
+  return resolve(__dirname, `../boilerplates/${name}.ejs`);
 }
 
-export function renderTemplate(name, data) {
-  const template = getTemplate(name);
-  const source = ejs.render(template, data);
-  return source;
-}
+export function renderFile(name, data, callback) {
+  const file = getTemplate(name);
 
-export function renderFile(name, data, cb) {
-  const filePath = join(__dirname, `../boilerplates/${name}.ejs`);
-  ejs.renderFile(filePath, data, function (err, str) {
+  ejs.renderFile(file, data, function(err, str) {
     if (!err) {
-      cb(str);
+      callback(str);
+    } else {
+      console.log(err);
+      process.exit(1);
     }
   });
 }
@@ -35,13 +31,20 @@ export function writeFile(filePath, source) {
 
 export function writeHTMLFile(filePath, source) {
   const result = html(source, {
-    preserve_newlines: false
+    indent_size: 2,
+    end_with_newline: true,
+    preserve_newlines: false,
+    wrap_line_length: 100,
+    unformatted: [],
   });
   outputFileSync(filePath, result, 'utf-8');
 }
 
 export function writeCSSFile(filePath, source) {
-  const result = css(source, {});
+  const result = css(source, {
+    indent_size: 2,
+    end_with_newline: true,
+  });
   outputFileSync(filePath, result, 'utf-8');
 }
 
