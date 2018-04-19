@@ -1,6 +1,6 @@
 import ejs from 'ejs';
 import { resolve } from 'path';
-import { readFileSync, existsSync } from 'fs';
+import { readFileSync } from 'fs';
 import { outputFileSync, removeSync } from 'fs-extra';
 import { html, css } from 'js-beautify';
 

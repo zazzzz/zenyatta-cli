@@ -7,7 +7,7 @@ import { readFile, renderFile, writeHTMLFile, writeCSSFile } from './utils';
 
 function zenyatta(program) {
   if (!program.args.length) {
-    program.help()
+    program.help();
   }
 
   const yamlFile = program.args[0];
@@ -18,11 +18,11 @@ function zenyatta(program) {
       blankStart: true,
       blankEnd: true,
     });
-    process.exit(1)
+    process.exit(1);
   }
 
   try {
-    const spinner = ora(`parsing ${yamlFile}`).start();
+    const spinner = ora(`Parsing ${yamlFile}`).start();
     log();
 
     const name = basename(yamlFile, '.yml');
@@ -44,7 +44,7 @@ function zenyatta(program) {
       });
     });
 
-    spinner.succeed(`success generate page: ${name}`);
+    spinner.succeed(`Success generate page: ${name}`);
   } catch (err) {
     error(err, {
       blankStart: true,
