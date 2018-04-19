@@ -25,26 +25,27 @@ export function readFile(filePath) {
 }
 
 export function writeFile(filePath, source) {
+  removeFile(filePath);
   outputFileSync(filePath, source, 'utf-8');
 }
 
 export function writeHTMLFile(filePath, source) {
-  const result = html(source, {
+  const formatted = html(source, {
     indent_size: 2,
     end_with_newline: true,
     preserve_newlines: false,
     wrap_line_length: 100,
     unformatted: [],
   });
-  outputFileSync(filePath, result, 'utf-8');
+  writeFile(filePath, formatted);
 }
 
 export function writeCSSFile(filePath, source) {
-  const result = css(source, {
+  const formatted = css(source, {
     indent_size: 2,
     end_with_newline: true,
   });
-  outputFileSync(filePath, result, 'utf-8');
+  writeFile(filePath, formatted);
 }
 
 export function removeFile(filePath) {

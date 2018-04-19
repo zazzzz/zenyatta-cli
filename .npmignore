@@ -1,0 +1,11 @@
+example
+node_module
+src
+test
+.babelrc
+.editorconfig
+.travis.yml
+CHANGELOG.md
+LICENSE
+package-lock.json
+TODO.md

@@ -6,6 +6,10 @@ import { log, success, error } from './console';
 import { readFile, renderFile, writeHTMLFile, writeCSSFile } from './utils';
 
 function zenyatta(program) {
+  if (!program.args.length) {
+    program.help()
+  }
+
   const yamlFile = program.args[0];
   const style = program.style;
 
@@ -40,7 +44,7 @@ function zenyatta(program) {
       });
     });
 
-    spinner.succeed(`success generate page ${name}`);
+    spinner.succeed(`success generate page: ${name}`);
   } catch (err) {
     error(err, {
       blankStart: true,
