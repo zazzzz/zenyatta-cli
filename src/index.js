@@ -1,4 +1,4 @@
-import { basename } from 'path';
+import { resolve, basename } from 'path';
 import { existsSync } from 'fs';
 import yaml from 'js-yaml';
 import ora from 'ora';
@@ -8,10 +8,13 @@ import { readFile, renderFile, writeHTMLFile, writeCSSFile } from './utils';
 function zenyatta(program) {
   if (!program.args.length) {
     program.help();
+    process.exit(1);
   }
 
+  const cwd = process.cwd();
   const yamlFile = program.args[0];
-  const style = program.style;
+  const style = program.style || 'zatlas';
+  const dir = resolve(cwd, program.dir || '');
 
   if (!yamlFile || !existsSync(yamlFile)) {
     error('To start, you must enter a YAML file', {
@@ -29,7 +32,7 @@ function zenyatta(program) {
     const config = yaml.safeLoad(readFile(yamlFile));
 
     renderFile('index', config, source => {
-      writeHTMLFile(`${name}.html`, source);
+      writeHTMLFile(`${name}.html`, source, dir);
       success(`create ${name}.html`, {
         blankStart: true,
         paddingLeft: 6,
@@ -37,7 +40,7 @@ function zenyatta(program) {
     });
 
     renderFile(`style-${style}`, config, source => {
-      writeCSSFile(`${name}.css`, source);
+      writeCSSFile(`${name}.css`, source, dir);
       success(`create ${name}.css`, {
         blankEnd: true,
         paddingLeft: 6,

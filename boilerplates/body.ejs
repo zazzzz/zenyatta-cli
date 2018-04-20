@@ -1,4 +1,5 @@
 <div class="container">
+  <% if (locals.features) { %>
   <ul class="intro-list">
     <% features.forEach(function(ft, idx){ %>
       <li>
@@ -13,6 +14,8 @@
       </li>
     <% }); %>
   </ul>
+  <% } %>
+  <% if (locals.example) { %>
   <div class="module">
     <h3 class="module-title"><%= example.title %></h3>
     <p class="module-desc"><%= example.subtitle %></p>
@@ -25,4 +28,5 @@
       <% }) %>
     </ul>
   </div>
+  <% } %>
 </div>

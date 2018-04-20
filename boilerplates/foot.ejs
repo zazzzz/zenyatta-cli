@@ -2,13 +2,20 @@
   <div class="footer-content">
     <div class="footer-info left">
       <div class="brand">
+        <% if (locals.logo) { %>
         <img src="<%= logo %>" alt="" class="logo">
+        <% } %>
+        <% if (locals.title) { %>
         <span><%= title %></span>
+        <% } %>
       </div>
+      <% if (locals.copyright) { %>
       <p>&copy; <%= copyright %></p>
+      <% } %>
     </div>
     <div class="center footer-friendlink">
       <h3 class="title">友情链接</h3>
+      <% if (locals.links) { %>
       <ul class="link-list">
         <% links.forEach(function(link){ %>
           <li class="link">
@@ -18,10 +25,12 @@
           </li>
         <% }); %>
       </ul>
+      <% } %>
     </div>
     <div class="line"></div>
     <div class="right footer-callus">
       <h3 class="title">联系我们</h3>
+      <% if (locals.contact) { %>
       <ul class="call-list">
         <li class="call-item">
           <i class="icon icon-location"></i><%= contact.address %></li>
@@ -30,6 +39,7 @@
         <li class="call-item">
           <i class="icon icon-phone"></i><%= contact.phone %></li>
       </ul>
+      <% } %>
     </div>
   </div>
 </footer>

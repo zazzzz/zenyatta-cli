@@ -29,7 +29,15 @@ export function writeFile(filePath, source) {
   outputFileSync(filePath, source, 'utf-8');
 }
 
-export function writeHTMLFile(filePath, source) {
+export function removeFile(filePath) {
+  removeSync(filePath);
+}
+
+export function getFilePath(basePath, fileName) {
+  return resolve(basePath, fileName);
+}
+
+export function writeHTMLFile(fileName, source, basePath) {
   const formatted = html(source, {
     indent_size: 2,
     end_with_newline: true,
@@ -37,17 +45,15 @@ export function writeHTMLFile(filePath, source) {
     wrap_line_length: 100,
     unformatted: [],
   });
+  const filePath = getFilePath(basePath, fileName);
   writeFile(filePath, formatted);
 }
 
-export function writeCSSFile(filePath, source) {
+export function writeCSSFile(fileName, source, basePath) {
   const formatted = css(source, {
     indent_size: 2,
     end_with_newline: true,
   });
+  const filePath = getFilePath(basePath, fileName);
   writeFile(filePath, formatted);
-}
-
-export function removeFile(filePath) {
-  removeSync(filePath);
 }

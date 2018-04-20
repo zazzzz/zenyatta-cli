@@ -14,7 +14,7 @@
     "babel": "babel src -d lib",
     "build": "npm run lint && npm run clean && npm run babel",
     "dev": "npm run babel -- -w",
-    "test": ""
+    "test": "mocha"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -43,6 +43,9 @@
     "babel-cli": "^6.26.0",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.1",
-    "eslint": "^4.19.1"
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "jsdom": "^11.8.0",
+    "mocha": "^5.1.1"
   }
 }

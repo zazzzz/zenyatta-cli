@@ -1,11 +1,16 @@
 <div class="wrapper-header">
   <header>
     <div class="brand">
+      <% if (locals.logo) { %>
       <img src="<%= logo %>" alt="" class="logo">
+      <% } %>
+      <% if (locals.title) { %>
       <span><%= title %></span>
+      <% } %>
     </div>
 
     <nav class="navigator">
+      <% if (locals.navigators) { %>
       <ul class="menu">
         <% navigators.forEach(function(navi){ %>
           <li class="menu-item">
@@ -13,20 +18,31 @@
               <%= navi.title %>
             </a>
           </li>
-          <% }); %>
+          <% }) %>
       </ul>
+      <% } %>
     </nav>
   </header>
 
   <div class="header-contaier">
     <div class="left desc">
+      <% if (locals.title) { %>
       <h1 class="brand-title"><%= title %></h1>
+      <% } %>
+      <% if (locals.subtitle) { %>
       <p class="brand-desc1"><%= subtitle %></p>
+      <% } %>
+      <% if (locals.description) { %>
       <p class="brand-desc2"><%= description %></p>
+      <% } %>
+      <% if (locals.subdescription) { %>
       <p class="brand-desc3"><%= subdescription %></p>
+      <% } %>
     </div>
     <div class="right img">
+      <% if (locals.cover) { %>
       <img src="<%= cover %>" alt="">
+      <% } %>
     </div>
   </div>
 </div>
