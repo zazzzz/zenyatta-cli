@@ -3,6 +3,9 @@ node_module
 test
 .babelrc
 .editorconfig
+.eslintignore
+.eslintrc
+.gitignore
 .travis.yml
 CHANGELOG.md
 LICENSE
