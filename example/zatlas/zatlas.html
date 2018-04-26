@@ -7,138 +7,183 @@
   <meta name="renderer" content="webkit" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Zatlas</title>
-  <link rel="stylesheet" href="./Zatlas.css"> </head>
+  <link rel="shortcut icon" href="images/Logo_default.png" type="image/x-icon">
+  <link rel="stylesheet" href="./materialize/css/iconfont.css">
+  <link rel="stylesheet" href="./materialize/css/materialize.css">
+  <link rel="stylesheet" href="./zatlas.css"> </head>
 
 <body>
-  <div class="wrapper-header">
-    <header>
-      <div class="brand">
-        <img src="images/Logo_default.png" alt="" class="logo">
-        <span>Zatlas</span>
-      </div>
-      <nav class="navigator">
-        <ul class="menu">
-          <li class="menu-item">
-            <a href="v.anlink.com"> 首页 </a>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo left">
+            <img src="images/Logo_default.png"> Zatlas
+          </a>
+          <a href="#" data-target="mobile-nav" class="sidenav-trigger right hide-on-med-and-up">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="hide-on-small-only header-nav">
+            <li>
+              <a href="#">首页</a>
+            </li>
+            <li>
+              <a href="#">下载</a>
+            </li>
+            <li>
+              <a href="#">文档</a>
+            </li>
+            <li>
+              <a href="#">合作</a>
+            </li>
+          </ul>
+        </div>
+        <ul class="sidenav" id="mobile-nav">
+          <li>
+            <a href="#">首页</a>
           </li>
-          <li class="menu-item">
-            <a href="v.anlink.com"> 下载 </a>
+          <li>
+            <a href="#">下载</a>
           </li>
-          <li class="menu-item">
-            <a href="v.anlink.com"> 文档 </a>
+          <li>
+            <a href="#">文档</a>
           </li>
-          <li class="menu-item">
-            <a href="v.anlink.com"> 合作 </a>
+          <li>
+            <a href="#">合作</a>
           </li>
         </ul>
       </nav>
-    </header>
-    <div class="header-contaier">
-      <div class="left desc">
-        <h1 class="brand-title">Zatlas</h1>
-        <p class="brand-desc1">极致可视化产品开发体验</p>
-        <p class="brand-desc2">提供一站式数据可视化服务</p>
-        <p class="brand-desc3">支持数据预览-数据绑定-可视化设计-数据产品开发全链路流程</p>
-      </div>
-      <div class="right img">
-        <img src="images/desc.png" alt=""> </div>
     </div>
-  </div>
-  <div class="container">
-    <ul class="intro-list">
-      <li>
-        <div class="intro">
-          <h3 class="number">1</h3>
-          <p class="intro-title">一站式的开发工具</p>
-          <p class="intro-desc">独特的角色定制化模式，旨在打通设计师、前端工程师、后台开发的工作全链路，大大降低开发成本</p>
+
+    <div class="container spotlight">
+      <div class="row">
+        <div class="col m6 s12">
+          <h1 class="white-text">Zatlas</h1>
+          <h4 class="white-text">极致可视化产品开发体验</h4>
         </div>
-        <div class="intro-img">
-          <img src="images/01.png" alt=""> </div>
-      </li>
-      <li>
-        <div class="intro">
-          <h3 class="number">2</h3>
-          <p class="intro-title">丰富的可视化</p>
-          <p class="intro-desc">多达十几种基础图表，更有关系网络、专题地图等专业级图表，满足用户多方位的数据类型展示，快速调节设置，一键生成代码</p>
+        <div class="col m6 s12">
+          <img class="responsive-img" src="images/desc.png">
         </div>
-        <div class="intro-img">
-          <img src="images/02.png" alt=""> </div>
-      </li>
-      <li>
-        <div class="intro">
-          <h3 class="number">3</h3>
-          <p class="intro-title">专业的案例模版</p>
-          <p class="intro-desc">不管是产品大屏还是可视化探索，都能在这里找到模版，快速上手搭建个性化的可视化系统</p>
+        <div class="col m6 s12 spotlight-extra">
+          <h5 class="white-text">提供一站式数据可视化服务</h5>
+          <h6 class="white-text">支持数据预览-数据绑定-可视化设计-数据产品开发全链路流程</h6>
+          <a class="waves-effect btn spotlight-btn">点击试用</a>
         </div>
-        <div class="intro-img">
-          <img src="images/03.png" alt=""> </div>
-      </li>
-      <li>
-        <div class="intro">
-          <h3 class="number">4</h3>
-          <p class="intro-title">多种数据源接入</p>
-          <p class="intro-desc">不仅可以方便地连接多种数据库，更内置了样例数据供设计师调节、导出样式配置，缩短数据产品开发时间</p>
-        </div>
-        <div class="intro-img">
-          <img src="images/04.png" alt=""> </div>
-      </li>
-    </ul>
-    <div class="module">
-      <h3 class="module-title">模版案例精选</h3>
-      <p class="module-desc">专业的案例模版，助您快速搭建可视化场景</p>
-      <ul class="case-list">
-        <li class="case">
-          <img src="images/case1.png" alt="">
-          <p class="case-name">风控场景</p>
-        </li>
-        <li class="case">
-          <img src="images/case2.png" alt="">
-          <p class="case-name">周报场景</p>
-        </li>
-        <li class="case">
-          <img src="images/case3.png" alt="">
-          <p class="case-name">金融场景</p>
-        </li>
-      </ul>
+      </div>
     </div>
-  </div>
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-info left">
-        <div class="brand">
-          <img src="images/Logo_default.png" alt="" class="logo">
-          <span>Zatlas</span>
+  </header>
+
+  <main>
+    <div class="container features">
+      <div class="row feature">
+        <div class="col m6 push-m6 s12">
+          <img class="responsive-img" src="images/01.png">
         </div>
-        <p>&copy; 2017 Anlink 众安信息技术服务有限公司</p>
+        <div class="col m6 pull-m6 s12 feature-content">
+          <h1 class="feature-num">01</h1>
+          <h5>一站式的开发工具</h5>
+          <p class="feature-desc">
+            独特的角色定制化模式，旨在打通设计师、前端工程师、后台开发的工作全链路，大大降低开发成本
+          </p>
+        </div>
       </div>
-      <div class="center footer-friendlink">
-        <h3 class="title">友情链接</h3>
-        <ul class="link-list">
-          <li class="link">
-            <a href="v.anlink.com"> 安链云 </a>
-          </li>
-          <li class="link">
-            <a href="v.anlink.com"> 众安科技 </a>
-          </li>
-          <li class="link">
-            <a href="v.anlink.com"> 众安保险 </a>
-          </li>
-        </ul>
+      <div class="row feature feature-reserve">
+        <div class="col m6 s12">
+          <img class="responsive-img" src="images/02.png">
+        </div>
+        <div class="col m6 s12 feature-content">
+          <h1 class="feature-num">02</h1>
+          <h5>丰富的可视化</h5>
+          <p class="feature-desc">
+            多达十几种基础图表，更有关系网络、专题地图等专业级图表，满足用户多方位的数据类型展示，快速调节设置，一键生成代码
+          </p>
+        </div>
       </div>
-      <div class="line"></div>
-      <div class="right footer-callus">
-        <h3 class="title">联系我们</h3>
-        <ul class="call-list">
-          <li class="call-item">
-            <i class="icon icon-location"></i>上海市黄浦区北京东路130号中实大楼4楼</li>
-          <li class="call-item">
-            <i class="icon icon-email"></i>contacts@zhongan.io</li>
-          <li class="call-item">
-            <i class="icon icon-phone"></i>021-60276816</li>
-        </ul>
+      <div class="row feature">
+        <div class="col m6 push-m6 s12">
+          <img class="responsive-img" src="images/03.png">
+        </div>
+        <div class="col m6 pull-m6 s12 feature-content">
+          <h1 class="feature-num">03</h1>
+          <h5>专业的案例模版</h5>
+          <p class="feature-desc">
+            不管是产品大屏还是可视化探索，都能在这里找到模版，快速上手搭建个性化的可视化系统
+          </p>
+        </div>
+      </div>
+      <div class="row feature feature-reserve">
+        <div class="col m6 s12">
+          <img class="responsive-img" src="images/04.png">
+        </div>
+        <div class="col m6 s12 feature-content">
+          <h1 class="feature-num">04</h1>
+          <h5>多种数据源接入</h5>
+          <p class="feature-desc">
+            不仅可以方便地连接多种数据库，更内置了样例数据供设计师调节、导出样式配置，缩短数据产品开发时间
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container cases">
+      <div class="row">
+        <h5 class="center-align">模版案例精选</h5>
+        <p class="center-align">专业的案例模版，助您快速搭建可视化场景</p>
+        <div class="col m4 s12">
+          <img class="responsive-img" src="images/case1.png">
+          <p class="center-align case-title">风控场景</p>
+        </div>
+        <div class="col m4 s12">
+          <img class="responsive-img" src="images/case2.png">
+          <p class="center-align case-title">周报场景</p>
+        </div>
+        <div class="col m4 s12">
+          <img class="responsive-img" src="images/case3.png">
+          <p class="center-align case-title">金融场景</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col m4 s12 footer-brand">
+          <a href="#" class="brand-logo">
+            <img src="images/Logo_default.png"> Zatlas
+          </a>
+          <p class="text-sm">&copy; 2017 Anlink 众安信息技术服务有限公司</p>
+        </div>
+        <div class="col m4 s12 footer-links">
+          <h6>友情链接</h6>
+          <div class="row footer-link">
+            <div class="col s4">
+              <a href="#" class="white-text text-sm">安链云</a>
+            </div>
+            <div class="col s4">
+              <a href="#" class="white-text text-sm">众安科技</a>
+            </div>
+            <div class="col s4">
+              <a href="#" class="white-text text-sm">众安保险</a>
+            </div>
+          </div>
+        </div>
+        <div class="col m4 s12 footer-contact">
+          <h6>联系我们</h6>
+          <ul class="text-sm">
+            <li>
+              <i class="tiny material-icons">location_on</i>上海市黄浦区北京东路130号中实大楼4楼</li>
+            <li>
+              <i class="tiny material-icons">mail_outline</i>contacts@zhongan.io</li>
+            <li>
+              <i class="tiny material-icons">phone</i>021-60276816</li>
+          </ul>
+        </div>
       </div>
     </div>
   </footer>
+  <script src="./materialize/js/materialize.min.js"></script>
+  <script src="./zatlas.js"></script>
 </body>
 
 </html>
