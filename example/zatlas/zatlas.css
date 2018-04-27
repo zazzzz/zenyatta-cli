@@ -1,7 +1,5 @@
 html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
-    SimSun, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -52,7 +50,8 @@ nav {
   border-radius: 20px;
 }
 
-.spotlight-btn:hover, .spotlight-btn:focus {
+.spotlight-btn:hover,
+.spotlight-btn:focus {
   background: #fff;
 }
 
@@ -68,7 +67,7 @@ main {
 }
 
 .feature-num {
-  color: rgba(145,134,235,0.6);
+  color: rgba(145, 134, 235, 0.6);
   font-weight: bold;
   font-family: 'Arial Black', Arial, Helvetica, sans-serif;
 }
@@ -141,66 +140,50 @@ main {
   .brand-logo {
     font-size: 1.3rem !important;
   }
-
   .brand-logo img {
     width: 25px !important;
   }
-
   .spotlight {
     text-align: center;
   }
-
   .spotlight-extra {
     margin-top: 0;
   }
-
   main {
     padding-top: 160px;
     padding-bottom: 180px;
   }
-
   .feature-num {
     display: none;
   }
-
   .feature {
     padding-bottom: 0;
   }
-
   .feature-content {
     margin-top: 1rem;
   }
-
   .feature-content h5 {
     text-align: center;
   }
-
   .feature-content .feature-desc {
     max-width: 100%;
   }
-
   .cases {
     margin-top: 100px;
   }
-
   .cases img {
     width: 100%;
   }
-
   .footer-brand {
     text-align: center;
   }
-
   .footer-link {
     margin-top: 1rem;
   }
-
   .footer-links:before {
     content: none;
   }
-
   .page-footer .row .footer-contact {
     padding-left: 0.75rem;
   }
-
 }
