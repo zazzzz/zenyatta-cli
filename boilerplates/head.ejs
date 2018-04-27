@@ -1,48 +1,68 @@
-<div class="wrapper-header">
-  <header>
-    <div class="brand">
-      <% if (locals.logo) { %>
-      <img src="<%= logo %>" alt="" class="logo">
-      <% } %>
-      <% if (locals.title) { %>
-      <span><%= title %></span>
-      <% } %>
-    </div>
-
-    <nav class="navigator">
+<header>
+  <div class="container">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo left">
+          <% if (locals.logo) { %>
+            <img src="<%= logo %>" />
+          <% } %>
+          <% if (locals.title) { %>
+            <%= title %>
+          <% } %>
+        </a>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger right hide-on-med-and-up">
+          <i class="material-icons">menu</i>
+        </a>
+        <% if (locals.navigators) { %>
+          <ul class="hide-on-small-only header-nav">
+            <% navigators.forEach(function(navi){ %>
+              <li>
+                <a href="<%= navi.link %>">
+                  <%= navi.title %>
+                </a>
+              </li>
+              <% }) %>
+          </ul>
+        <% } %>
+      </div>
       <% if (locals.navigators) { %>
-      <ul class="menu">
-        <% navigators.forEach(function(navi){ %>
-          <li class="menu-item">
-            <a href="<%= navi.link %>">
-              <%= navi.title %>
-            </a>
-          </li>
-          <% }) %>
-      </ul>
+        <ul class="sidenav" id="mobile-nav">
+          <% navigators.forEach(function(navi){ %>
+            <li>
+              <a href="<%= navi.link %>">
+                <%= navi.title %>
+              </a>
+            </li>
+            <% }) %>
+        </ul>
       <% } %>
     </nav>
-  </header>
+  </div>
 
-  <div class="header-contaier">
-    <div class="left desc">
-      <% if (locals.title) { %>
-      <h1 class="brand-title"><%= title %></h1>
-      <% } %>
-      <% if (locals.subtitle) { %>
-      <p class="brand-desc1"><%= subtitle %></p>
-      <% } %>
-      <% if (locals.description) { %>
-      <p class="brand-desc2"><%= description %></p>
-      <% } %>
-      <% if (locals.subdescription) { %>
-      <p class="brand-desc3"><%= subdescription %></p>
-      <% } %>
-    </div>
-    <div class="right img">
-      <% if (locals.cover) { %>
-      <img src="<%= cover %>" alt="">
-      <% } %>
+  <div class="container spotlight">
+    <div class="row">
+      <div class="col m6 s12">
+        <% if (locals.title) { %>
+          <h1 class="white-text"><%= title %></h1>
+        <% } %>
+        <% if (locals.subtitle) { %>
+          <h4 class="white-text"><%= subtitle %></h4>
+        <% } %>
+      </div>
+      <div class="col m6 s12">
+        <% if (locals.cover) { %>
+          <img class="responsive-img" src="<%= cover %>" />
+        <% } %>
+      </div>
+      <div class="col m6 s12 spotlight-extra">
+        <% if (locals.description) { %>
+          <h5 class="white-text"><%= description %></h5>
+        <% } %>
+        <% if (locals.subdescription) { %>
+          <h6 class="white-text"><%= subdescription %></h6>
+        <% } %>
+        <a class="waves-effect btn spotlight-btn">点击试用</a>
+      </div>
     </div>
   </div>
-</div>
+</header>

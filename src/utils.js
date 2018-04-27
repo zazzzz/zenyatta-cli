@@ -2,7 +2,7 @@ import ejs from 'ejs';
 import { resolve } from 'path';
 import { readFileSync } from 'fs';
 import { outputFileSync, removeSync } from 'fs-extra';
-import { html, css } from 'js-beautify';
+import { html, css, js } from 'js-beautify';
 
 export function getTemplate(name) {
   return resolve(__dirname, `../boilerplates/${name}.ejs`);
@@ -51,6 +51,15 @@ export function writeHTMLFile(fileName, source, basePath) {
 
 export function writeCSSFile(fileName, source, basePath) {
   const formatted = css(source, {
+    indent_size: 2,
+    end_with_newline: true,
+  });
+  const filePath = getFilePath(basePath, fileName);
+  writeFile(filePath, formatted);
+}
+
+export function writeJSFile(fileName, source, basePath) {
+  const formatted = js(source, {
     indent_size: 2,
     end_with_newline: true,
   });

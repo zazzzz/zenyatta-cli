@@ -1,45 +1,46 @@
-<footer class="footer">
-  <div class="footer-content">
-    <div class="footer-info left">
-      <div class="brand">
-        <% if (locals.logo) { %>
-        <img src="<%= logo %>" alt="" class="logo">
-        <% } %>
-        <% if (locals.title) { %>
-        <span><%= title %></span>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col m4 s12 footer-brand">
+        <a href="#" class="brand-logo">
+          <% if (locals.logo) { %>
+            <img src="<%= logo %>" />
+          <% } %>
+          <% if (locals.title) { %>
+            <%= title %>
+          <% } %>
+        </a>
+        <% if (locals.copyright) { %>
+          <p class="text-sm">&copy; <%= copyright %></p>
         <% } %>
       </div>
-      <% if (locals.copyright) { %>
-      <p>&copy; <%= copyright %></p>
-      <% } %>
-    </div>
-    <div class="center footer-friendlink">
-      <h3 class="title">友情链接</h3>
-      <% if (locals.links) { %>
-      <ul class="link-list">
-        <% links.forEach(function(link){ %>
-          <li class="link">
-            <a href="<%= link.link %>">
-              <%= link.title %>
-            </a>
-          </li>
-        <% }); %>
-      </ul>
-      <% } %>
-    </div>
-    <div class="line"></div>
-    <div class="right footer-callus">
-      <h3 class="title">联系我们</h3>
-      <% if (locals.contact) { %>
-      <ul class="call-list">
-        <li class="call-item">
-          <i class="icon icon-location"></i><%= contact.address %></li>
-        <li class="call-item">
-          <i class="icon icon-email"></i><%= contact.email %></li>
-        <li class="call-item">
-          <i class="icon icon-phone"></i><%= contact.phone %></li>
-      </ul>
-      <% } %>
+      <div class="col m4 s12 footer-links">
+        <h6>友情链接</h6>
+        <div class="row footer-link">
+          <% if (locals.links) { %>
+            <% links.forEach(function(link){ %>
+              <div class="col s4">
+                <a href="<%= link.link %>" class="white-text text-sm">
+                  <%= link.title %>
+                </a>
+              </div>
+            <% }); %>
+          <% } %>
+        </div>
+      </div>
+      <div class="col m4 s12 footer-contact">
+        <h6>联系我们</h6>
+        <% if (locals.contact) { %>
+          <ul class="text-sm">
+            <li>
+              <i class="tiny material-icons">location_on</i><%= contact.address %></li>
+            <li>
+              <i class="tiny material-icons">mail_outline</i><%= contact.email %></li>
+            <li>
+              <i class="tiny material-icons">phone</i><%= contact.phone %></li>
+          </ul>
+        <% } %>
+      </div>
     </div>
   </div>
 </footer>

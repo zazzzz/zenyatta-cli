@@ -3,7 +3,7 @@ import { existsSync } from 'fs';
 import yaml from 'js-yaml';
 import ora from 'ora';
 import { log, success, error } from './console';
-import { readFile, renderFile, writeHTMLFile, writeCSSFile } from './utils';
+import { readFile, renderFile, writeHTMLFile, writeCSSFile, writeJSFile } from './utils';
 
 function zenyatta(program) {
   if (!program.args.length) {
@@ -39,9 +39,16 @@ function zenyatta(program) {
       });
     });
 
-    renderFile(`style-${style}`, config, source => {
+    renderFile(`style-${style}`, {}, source => {
       writeCSSFile(`${name}.css`, source, dir);
       success(`create ${name}.css`, {
+        paddingLeft: 6,
+      });
+    });
+
+    renderFile(`script-${style}`, {}, source => {
+      writeJSFile(`${name}.js`, source, dir);
+      success(`create ${name}.js`, {
         blankEnd: true,
         paddingLeft: 6,
       });

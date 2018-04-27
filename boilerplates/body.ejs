@@ -1,32 +1,32 @@
-<div class="container">
+<main>
   <% if (locals.features) { %>
-  <ul class="intro-list">
-    <% features.forEach(function(ft, idx){ %>
-      <li>
-        <div class="intro">
-          <h3 class="number"><%= idx + 1 %></h3>
-          <p class="intro-title"><%= ft.title %></p>
-          <p class="intro-desc"><%= ft.description %></p>
+    <div class="container features">
+      <% features.forEach(function(ft, idx){ %>
+        <div class="row feature <%= idx % 2 ? 'feature-reserve' : '' %>">
+          <div class="col m6 <%= idx % 2 ? '' : 'push-m6' %> s12">
+            <img class="responsive-img" src="<%= ft.image %>" />
+          </div>
+          <div class="col m6 <%= idx % 2 ? '' : 'pull-m6' %> s12 feature-content">
+            <h1 class="feature-num">0<%= idx + 1 %></h1>
+            <h5><%= ft.title %></h5>
+            <p class="feature-desc"><%= ft.description %></p>
+          </div>
         </div>
-        <div class="intro-img">
-          <img src="<%= ft.image %>" alt="">
-        </div>
-      </li>
-    <% }); %>
-  </ul>
+      <% }); %>
+    </div>
   <% } %>
   <% if (locals.example) { %>
-  <div class="module">
-    <h3 class="module-title"><%= example.title %></h3>
-    <p class="module-desc"><%= example.subtitle %></p>
-    <ul class="case-list">
-      <% example.examples.forEach(function (ep) { %>
-        <li class="case">
-          <img src="<%= ep.image %>" alt="">
-          <p class="case-name"><%= ep.title %></p>
-        </li>
-      <% }) %>
-    </ul>
-  </div>
+    <div class="container cases">
+      <div class="row">
+        <h5 class="center-align"><%= example.title %></h5>
+        <p class="center-align"><%= example.subtitle %></p>
+        <% example.examples.forEach(function (ep) { %>
+          <div class="col m4 s12">
+            <img class="responsive-img" src="<%= ep.image %>" />
+            <p class="center-align case-title"><%= ep.title %></p>
+          </div>
+        <% }) %>
+      </div>
+    </div>
   <% } %>
-</div>
+</main>
