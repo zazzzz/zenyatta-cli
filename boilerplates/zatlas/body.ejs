@@ -1,10 +1,10 @@
-<main class="main-content">
+<main class="page-main">
   <% if (locals.features) { %>
     <div class="container features">
       <% features.forEach(function(ft, idx){ %>
         <div class="row feature <%= idx % 2 ? 'feature-reserve' : '' %>">
           <div class="col m6 <%= idx % 2 ? '' : 'push-m6' %> s12">
-            <img class="responsive-img" src="<%= ft.image %>" />
+            <img class="responsive-img" src="<%= ft.image %>">
           </div>
           <div class="col m6 <%= idx % 2 ? '' : 'pull-m6' %> s12 feature-content">
             <h1 class="feature-num">0<%= idx + 1 %></h1>
@@ -18,12 +18,12 @@
   <% if (locals.example) { %>
     <div class="container cases">
       <div class="row">
-        <h5 class="center-align"><%= example.title %></h5>
-        <p class="center-align"><%= example.subtitle %></p>
+        <h5 class="center-align case-title"><%= example.title %></h5>
+        <p class="center-align case-desc"><%= example.subtitle %></p>
         <% example.examples.forEach(function (ep) { %>
           <div class="col m4 s12">
-            <img class="responsive-img" src="<%= ep.image %>" />
-            <p class="center-align case-title"><%= ep.title %></p>
+            <img class="responsive-img" src="<%= ep.image %>">
+            <p class="center-align case-name"><%= ep.title %></p>
           </div>
         <% }) %>
       </div>

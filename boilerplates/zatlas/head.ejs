@@ -1,10 +1,10 @@
-<header>
-  <div class="container">
+<header class="page-header">
+  <div class="container page-nav">
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo left">
           <% if (locals.logo) { %>
-            <img src="<%= logo %>" />
+            <img src="<%= logo %>">
           <% } %>
           <% if (locals.title) { %>
             <%= title %>
@@ -41,7 +41,7 @@
 
   <div class="container spotlight">
     <div class="row">
-      <div class="col m6 s12">
+      <div class="col m6 s12 spotlight-title">
         <% if (locals.title) { %>
           <h1 class="white-text"><%= title %></h1>
         <% } %>
@@ -49,9 +49,9 @@
           <h4 class="white-text"><%= subtitle %></h4>
         <% } %>
       </div>
-      <div class="col m6 s12">
+      <div class="col m6 s12 spotlight-img">
         <% if (locals.cover) { %>
-          <img class="responsive-img" src="<%= cover %>" />
+          <img class="responsive-img" src="<%= cover %>">
         <% } %>
       </div>
       <div class="col m6 s12 spotlight-extra">
@@ -61,7 +61,7 @@
         <% if (locals.subdescription) { %>
           <h6 class="white-text"><%= subdescription %></h6>
         <% } %>
-        <a class="waves-effect btn spotlight-btn">点击试用</a>
+        <a class="btn spotlight-btn">点击试用</a>
       </div>
     </div>
   </div>

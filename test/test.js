@@ -26,7 +26,7 @@ describe('test zenyatta', function () {
   })
 
   it('check render body', function () {
-    expect(dom.querySelector('main').className).to.equal('main-content');
+    expect(dom.querySelector('main').className).to.equal('page-main');
   })
 
   it('check render foot', function () {
