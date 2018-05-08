@@ -6,22 +6,23 @@
 ## Install
 
 ```bash
-$ npm i -g zenyatta-cli
+npm i -g zenyatta-cli
 ```
 
 ## Usage
 
 ```bash
-$ zenyatta page.yml
+zenyatta page.yml
 ```
 
 ```bash
-$ zenyatta page.yml -s zatlas -d output
+zenyatta page.yml -t zatlas -s zatlas -d output
 ```
 
 ## Options
 
 ```
+-t, --template:  choose specific template, default: zatlas
 -s, --style:  choose specific style, default: zatlas
 -d, --dir:    choose output dir
 ```
