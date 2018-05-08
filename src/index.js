@@ -13,6 +13,7 @@ function zenyatta(program) {
 
   const cwd = process.cwd();
   const yamlFile = program.args[0];
+  const template = program.template || 'zatlas';
   const style = program.style || 'zatlas';
   const dir = resolve(cwd, program.dir || '');
 
@@ -30,8 +31,9 @@ function zenyatta(program) {
 
     const name = basename(yamlFile, '.yml');
     const config = yaml.safeLoad(readFile(yamlFile));
+    config._name = name;
 
-    renderFile('index', config, source => {
+    renderFile(`${template}/index`, config, source => {
       writeHTMLFile(`${name}.html`, source, dir);
       success(`create ${name}.html`, {
         blankStart: true,
@@ -39,14 +41,14 @@ function zenyatta(program) {
       });
     });
 
-    renderFile(`style-${style}`, {}, source => {
+    renderFile(`${style}/style`, {}, source => {
       writeCSSFile(`${name}.css`, source, dir);
       success(`create ${name}.css`, {
         paddingLeft: 6,
       });
     });
 
-    renderFile(`script-${style}`, {}, source => {
+    renderFile(`${style}/script`, {}, source => {
       writeJSFile(`${name}.js`, source, dir);
       success(`create ${name}.js`, {
         blankEnd: true,

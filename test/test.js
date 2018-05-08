@@ -9,6 +9,7 @@ describe('test zenyatta', function () {
   before(function () {
     zenyatta({
       args: ['test/zenyatta.yml'],
+      template: 'zatlas',
       style: 'zatlas',
       dir: 'test'
     })

@@ -5,6 +5,7 @@ const program = require('commander');
 program
   .version(require('../package.json').version, '-v, --version')
   .usage('<YAML-file> [options]')
+  .option('-t, --template <item>', 'choose specific template', 'zatlas')
   .option('-s, --style <item>', 'choose specific style', 'zatlas')
   .option('-d, --dir <path>', 'choose output dir')
   .parse(process.argv);
