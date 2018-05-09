@@ -3,7 +3,7 @@ import { existsSync } from 'fs';
 import yaml from 'js-yaml';
 import ora from 'ora';
 import { log, success, error } from './console';
-import { readFile, renderFile, writeHTMLFile, writeCSSFile, writeJSFile } from './utils';
+import { readFile, renderFile, writeHTMLFile, writeCSSFile, writeJSFile, copyThirdFile } from './utils';
 
 function zenyatta(program) {
   if (!program.args.length) {
@@ -55,6 +55,8 @@ function zenyatta(program) {
         paddingLeft: 6,
       });
     });
+
+    copyThirdFile(dir);
 
     spinner.succeed(`Success generate page: ${name}`);
   } catch (err) {

@@ -1,7 +1,7 @@
 import ejs from 'ejs';
 import { resolve } from 'path';
 import { readFileSync } from 'fs';
-import { outputFileSync, removeSync } from 'fs-extra';
+import { outputFileSync, removeSync, copySync } from 'fs-extra';
 import { html, css, js } from 'js-beautify';
 
 export function getTemplate(name) {
@@ -65,4 +65,10 @@ export function writeJSFile(fileName, source, basePath) {
   });
   const filePath = getFilePath(basePath, fileName);
   writeFile(filePath, formatted);
+}
+
+export function copyThirdFile(path) {
+  const source = resolve(__dirname, '../third/materialize');
+  const target = resolve(path, 'materialize');
+  copySync(source, target);
 }
