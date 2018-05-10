@@ -9,19 +9,8 @@ html {
   min-height: 480px;
 }
 
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-slide-in {
-  animation: slideIn 0.75s;
+[data-aos=slide-up] {
+  transform: translateY(50px);
 }
 
 .tpl-zatlas .container {

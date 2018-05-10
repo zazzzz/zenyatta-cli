@@ -68,7 +68,7 @@ export function writeJSFile(fileName, source, basePath) {
 }
 
 export function copyThirdFile(path) {
-  const source = resolve(__dirname, '../third/materialize');
-  const target = resolve(path, 'materialize');
+  const source = resolve(__dirname, '../third');
+  const target = resolve(path, 'third');
   copySync(source, target);
 }

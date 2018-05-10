@@ -8,15 +8,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Zatlas</title>
   <link rel="shortcut icon" href="images/Logo_default.png" type="image/x-icon">
-  <link rel="stylesheet" href="./materialize/css/iconfont.css">
-  <link rel="stylesheet" href="./materialize/css/materialize.css">
+  <link rel="stylesheet" href="./third/materialize/css/iconfont.css">
+  <link rel="stylesheet" href="./third/materialize/css/materialize.min.css">
+  <link rel="stylesheet" href="./third/aos/aos.css">
   <link rel="stylesheet" href="./zatlas.css"> </head>
 
 <body class="tpl-zatlas">
   <header class="page-header">
     <div class="container page-nav">
       <nav>
-        <div class="nav-wrapper animate-slide-in">
+        <div class="nav-wrapper" data-aos="slide-up">
           <a href="#" class="brand-logo left">
             <img src="images/Logo_default.png"> Zatlas </a>
           <a href="#" data-target="mobile-nav" class="sidenav-trigger right hide-on-med-and-up">
@@ -41,7 +42,7 @@
         </ul>
       </nav>
     </div>
-    <div class="container spotlight animate-slide-in">
+    <div class="container spotlight" data-aos="slide-up">
       <div class="row">
         <div class="col m6 s12 spotlight-title">
           <h1 class="white-text">Zatlas</h1>
@@ -58,8 +59,8 @@
     </div>
   </header>
   <main class="page-main">
-    <div class="container features animate-slide-in">
-      <div class="row feature ">
+    <div class="container features">
+      <div class="row feature " data-aos="slide-up">
         <div class="col m6 push-m6 s12">
           <img class="responsive-img" src="images/01.png"> </div>
         <div class="col m6 pull-m6 s12 feature-content">
@@ -68,7 +69,7 @@
           <p class="feature-desc">独特的角色定制化模式，旨在打通设计师、前端工程师、后台开发的工作全链路，大大降低开发成本</p>
         </div>
       </div>
-      <div class="row feature feature-reserve">
+      <div class="row feature feature-reserve" data-aos="slide-up">
         <div class="col m6  s12">
           <img class="responsive-img" src="images/02.png"> </div>
         <div class="col m6  s12 feature-content">
@@ -77,7 +78,7 @@
           <p class="feature-desc">多达十几种基础图表，更有关系网络、专题地图等专业级图表，满足用户多方位的数据类型展示，快速调节设置，一键生成代码</p>
         </div>
       </div>
-      <div class="row feature ">
+      <div class="row feature " data-aos="slide-up">
         <div class="col m6 push-m6 s12">
           <img class="responsive-img" src="images/03.png"> </div>
         <div class="col m6 pull-m6 s12 feature-content">
@@ -86,7 +87,7 @@
           <p class="feature-desc">不管是产品大屏还是可视化探索，都能在这里找到模版，快速上手搭建个性化的可视化系统</p>
         </div>
       </div>
-      <div class="row feature feature-reserve">
+      <div class="row feature feature-reserve" data-aos="slide-up">
         <div class="col m6  s12">
           <img class="responsive-img" src="images/04.png"> </div>
         <div class="col m6  s12 feature-content">
@@ -96,7 +97,7 @@
         </div>
       </div>
     </div>
-    <div class="container cases animate-slide-in">
+    <div class="container cases" data-aos="slide-up">
       <div class="row">
         <h5 class="center-align case-title">模版案例精选</h5>
         <p class="center-align case-desc">专业的案例模版，助您快速搭建可视化场景</p>
@@ -116,7 +117,7 @@
     </div>
   </main>
   <footer class="page-footer">
-    <div class="container animate-slide-in">
+    <div class="container" data-aos="slide-up">
       <div class="row">
         <div class="col m4 s12 footer-brand">
           <a href="#" class="brand-logo">
@@ -151,7 +152,8 @@
       </div>
     </div>
   </footer>
-  <script src="./materialize/js/materialize.min.js"></script>
+  <script src="./third/materialize/js/materialize.min.js"></script>
+  <script src="./third/aos/aos.js"></script>
   <script src="./zatlas.js"></script>
 </body>
 
