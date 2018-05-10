@@ -8,16 +8,10 @@ cover: images/desc.png
 navigators:
   -
     title: 首页
-    link: v.anlink.com
-  -
-    title: 下载
-    link: v.anlink.com
+    link: https://v.anlink.com/home
   -
     title: 文档
-    link: v.anlink.com
-  -
-    title: 合作
-    link: v.anlink.com
+    link: https://v.anlink.com/home#/doc
 
 features:
   -
@@ -55,13 +49,13 @@ copyright: 2017 Anlink 众安信息技术服务有限公司
 links:
   -
     title: 安链云
-    link: v.anlink.com
+    link: http://www.anlink.com/
   -
     title: 众安科技
-    link: v.anlink.com
+    link: http://www.zhongan.io/
   -
     title: 众安保险
-    link: v.anlink.com
+    link: http://www.zhongan.com/
 contact:
   address: 上海市黄浦区北京东路130号中实大楼4楼
   email: contacts@zhongan.io

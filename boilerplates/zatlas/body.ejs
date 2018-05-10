@@ -1,6 +1,6 @@
 <main class="page-main">
   <% if (locals.features) { %>
-    <div class="container features">
+    <div class="container features animate-slide-in">
       <% features.forEach(function(ft, idx){ %>
         <div class="row feature <%= idx % 2 ? 'feature-reserve' : '' %>">
           <div class="col m6 <%= idx % 2 ? '' : 'push-m6' %> s12">
@@ -16,7 +16,7 @@
     </div>
   <% } %>
   <% if (locals.example) { %>
-    <div class="container cases">
+    <div class="container cases animate-slide-in">
       <div class="row">
         <h5 class="center-align case-title"><%= example.title %></h5>
         <p class="center-align case-desc"><%= example.subtitle %></p>

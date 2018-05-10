@@ -9,6 +9,21 @@ html {
   min-height: 480px;
 }
 
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.75s;
+}
+
 .tpl-zatlas .container {
   width: 80% !important;
 }
@@ -72,6 +87,7 @@ html {
 
 .tpl-zatlas .page-main {
   background: url('./images/header_bg.png') no-repeat top center, url('./images/footer_bg.png') no-repeat bottom center;
+  background-size: contain;
   padding-top: 270px;
   padding-bottom: 270px;
 }
