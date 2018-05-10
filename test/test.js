@@ -37,5 +37,6 @@ describe('test zenyatta', function () {
     util.removeFile('test/zenyatta.html');
     util.removeFile('test/zenyatta.css');
     util.removeFile('test/zenyatta.js');
+    util.removeFile('test/third');
   })
 });
