@@ -5,7 +5,7 @@ M.Sidenav.init(elem, {
 });
 
 AOS.init({
-  offset: 100,
-  duration: 500,
+  offset: 200,
+  duration: 600,
   once: true,
 });

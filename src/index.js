@@ -3,7 +3,7 @@ import { existsSync } from 'fs';
 import yaml from 'js-yaml';
 import ora from 'ora';
 import { log, success, error } from './console';
-import { readFile, renderFile, writeHTMLFile, writeCSSFile, writeJSFile, copyThirdFile } from './utils';
+import * as utils from './utils';
 
 function zenyatta(program) {
   if (!program.args.length) {
@@ -30,33 +30,33 @@ function zenyatta(program) {
     log();
 
     const name = basename(yamlFile, '.yml');
-    const config = yaml.safeLoad(readFile(yamlFile));
-    config._name = name;
+    const config = yaml.safeLoad(utils.readFile(yamlFile));
+    config._name_ = name;
 
-    renderFile(`${template}/index`, config, source => {
-      writeHTMLFile(`${name}.html`, source, dir);
+    utils.renderFile(`${template}/index`, config, source => {
+      utils.writeHTMLFile(`${name}.html`, source, dir);
       success(`create ${name}.html`, {
         blankStart: true,
         paddingLeft: 6,
       });
     });
 
-    renderFile(`${style}/style`, {}, source => {
-      writeCSSFile(`${name}.css`, source, dir);
+    utils.renderFile(`${style}/style`, {}, source => {
+      utils.writeCSSFile(`${name}.css`, source, dir);
       success(`create ${name}.css`, {
         paddingLeft: 6,
       });
     });
 
-    renderFile(`${style}/script`, {}, source => {
-      writeJSFile(`${name}.js`, source, dir);
+    utils.renderFile(`${style}/script`, {}, source => {
+      utils.writeJSFile(`${name}.js`, source, dir);
       success(`create ${name}.js`, {
         blankEnd: true,
         paddingLeft: 6,
       });
     });
 
-    copyThirdFile(dir);
+    utils.copyThirdFile(dir);
 
     spinner.succeed(`Success generate page: ${name}`);
   } catch (err) {

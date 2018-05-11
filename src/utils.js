@@ -4,7 +4,7 @@ import { readFileSync } from 'fs';
 import { outputFileSync, removeSync, copySync } from 'fs-extra';
 import { html, css, js } from 'js-beautify';
 
-export function getTemplate(name) {
+function getTemplate(name) {
   return resolve(__dirname, `../boilerplates/${name}.ejs`);
 }
 
@@ -24,17 +24,17 @@ export function readFile(filePath) {
   return readFileSync(filePath, 'utf-8');
 }
 
-export function writeFile(filePath, source) {
-  removeFile(filePath);
-  outputFileSync(filePath, source, 'utf-8');
+function getFilePath(basePath, fileName) {
+  return resolve(basePath, fileName);
 }
 
 export function removeFile(filePath) {
   removeSync(filePath);
 }
 
-export function getFilePath(basePath, fileName) {
-  return resolve(basePath, fileName);
+function writeFile(filePath, source) {
+  removeFile(filePath);
+  outputFileSync(filePath, source, 'utf-8');
 }
 
 export function writeHTMLFile(fileName, source, basePath) {
@@ -70,5 +70,6 @@ export function writeJSFile(fileName, source, basePath) {
 export function copyThirdFile(path) {
   const source = resolve(__dirname, '../third');
   const target = resolve(path, 'third');
+  removeFile(target);
   copySync(source, target);
 }
